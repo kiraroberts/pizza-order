@@ -1,4 +1,6 @@
 // BACKEND LOGIC
+
+
 function Pizza() {
   this.size
   this.meat
@@ -37,3 +39,31 @@ function pizzaVegetable(vegetable) {
     return 0
   }
 }
+
+function pizzaSauce(sauce) {
+  if (sauce === 2) {
+    return 2
+  } else {
+    return 1
+  }
+}
+
+var pizzaTotal = 0
+var checkout = pizzaTotal;
+
+Pizza.prototype.price = function() {
+  pizzaTotal + pizzaSize(inputSize);
+  pizzaTotal + pizzaMeat(inputMeat);
+  pizzaTotal + pizzaVegetable(inputVegetable);
+  pizzaTotal + pizzaSauce(inputSauce);
+}
+
+console.log(pizzaTotal);
+
+// FRONT BACKEND
+
+$(document).ready(function() {
+  $("#formOrder".submit(function(event) {
+    event.preventDefault();
+  });
+});
