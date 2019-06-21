@@ -8,7 +8,7 @@ $(document).ready(function() {
   $("#formOrder").submit(function(event) {
     event.preventDefault();
 
-    var inputSize = parseInt($("#size").val());
+    var inputSize = parseInt$("select#size").val());
     var inputMeat = parseInt($("#meat").val());
     var inputVegetable = parseInt($("#vegetable").val());
     var inputSauce = parseInt($("#sauce").val());
