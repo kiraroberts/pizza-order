@@ -2,7 +2,7 @@
 
 
 
-// FRONT BACKEND
+// FRONTEND LOGIC
 
 $(document).ready(function() {
   $("#formOrder").submit(function(event) {
