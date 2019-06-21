@@ -22,7 +22,6 @@ $(document).ready(function() {
       this.meat = meat,
       this.vegetable = vegetable,
       this.sauce = sauce
-
     }
 
     function pizzaSize(size) {
