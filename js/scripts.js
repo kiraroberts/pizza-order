@@ -1,13 +1,15 @@
 // BACKEND LOGIC
 
+
+var pizzaOrder = new Pizza(0, 0, 0, 0)
+
 function Pizza(size, meat, vegetable, sauce) {
   this.size = 0,
   this.meat = 0,
   this.vegetable = 0,
   this.sauce = 0
-}
 
-var pizzaOrder = new Pizza()
+}
 
 function pizzaSize(size) {
   if (size === 2) {
@@ -53,10 +55,11 @@ var pizzaTotal = 0
 var checkout = pizzaTotal;
 
 Pizza.prototype.price = function() {
-  pizzaTotal + pizzaSize(inputSize);
-  pizzaTotal + pizzaMeat(inputMeat);
-  pizzaTotal + pizzaVegetable(inputVegetable);
-  pizzaTotal + pizzaSauce(inputSauce);
+  var addSize = pizzaTotal + pizzaSize(inputSize);
+  var addMeat = pizzaTotal + pizzaMeat(inputMeat);
+  var addVegetable = pizzaTotal + pizzaVegetable(inputVegetable);
+  var addSauce = pizzaTotal + pizzaSauce(inputSauce);
+  return pizzaTotal
 }
 
 console.log(pizzaTotal);
@@ -64,7 +67,7 @@ console.log(pizzaTotal);
 // FRONT BACKEND
 
 $(document).ready(function() {
-  $("#formOrder".submit(function(event) {
+  $("#formOrder").submit(function(event) {
     event.preventDefault();
 
     var inputSize = parseInt($("#size").val());
@@ -73,5 +76,5 @@ $(document).ready(function() {
     var inputSauce = parseInt($("#sauce").val());
 
     $("#output").text(checkout);
-  }));
+  });
 });
