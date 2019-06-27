@@ -13,10 +13,8 @@ $(document).ready(function() {
     var inputVegetable = parseInt($("#vegetable").val());
     var inputSauce = parseInt($("#sauce").val());
 
-    var pizzaOrder = new Pizza(0, 0, 0, 0)
-    var testPizza = new Pizza(2, 4, 2, 2)
-
-    console.log(checkout);
+    var pizzaOrder = new Pizza();
+    console.log(inputSize);
 
     function Pizza(size, meat, vegetable, sauce) {
       this.size = size,
@@ -26,54 +24,14 @@ $(document).ready(function() {
     }
 
 
-    var pizzaTotal = 0
-    var checkout = inputSize + inputMeat + inputVegetable + inputSauce;
+    Pizza.prototype.price = function () {
+      var checkout = inputSize + inputMeat + inputVegetable + inputSauce;
+      return checkout;
+    };
 
-    Pizza.prototype.price = function(pizzaOrder) {
-      function pizzaSize(size) {
-        if (size === 2) {
-          return 4
-        } else {
-          return 0
-        }
-      }
+    var pizzaTotal = pizzaOrder.price();
+    console.log(pizzaTotal);
 
-      function pizzaMeat(meat) {
-        if (meat === 4) {
-          return 2
-        } else if (meat === 3) {
-          return 2
-        } else if (meat === 2) {
-          return 1
-        } else {
-          return 0
-        }
-      }
-
-      function pizzaVegetable(vegetable) {
-        if (vegetable === 4) {
-          return 2
-        } else if (vegetable === 3) {
-          return 2
-        } else if (vegetable === 2) {
-          return 1
-        } else {
-          return 0
-        }
-      }
-
-      function pizzaSauce(sauce) {
-        if (sauce === 2) {
-          return 2
-        } else {
-          return 1
-        }
-      }
-      var checkout = pizzaSize(inputSize) + pizzaMeat(inputMeat) + pizzaVegetable(inputVegetable) + pizzaSauce(inputSauce);
-      // return pizzaTotal
-    }
-    console.log(checkout)
-
-    $("#output").text(checkout);
+    $("#output").text(pizzaTotal);
   });
 });
