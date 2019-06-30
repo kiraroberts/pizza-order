@@ -19,6 +19,7 @@ Pizza.prototype.price = function (size, meat, vegetable, sauce) {
 $(document).ready(function() {
   $("#formOrder").submit(function(event) {
     event.preventDefault();
+    $("#cost").show();
 
     var inputSize = parseInt($("#size").val());
     var inputMeat = parseInt($("#meat").val());

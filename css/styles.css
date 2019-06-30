@@ -9,11 +9,10 @@ h1, h2, h3 {
   font-family: sans-serif;
 }
 
-.jumbotron, .panel-default {
-  background-color: crimson;
-  border-color: black;
-}
-
 #opacity {
   opacity: 0.80;
+}
+
+#cost {
+  display: none;
 }
